@@ -31,7 +31,16 @@ public abstract class ScientistCard extends AbstractCard {
         this.attack = attack;
     }
 
-    public abstract void attackCard(ScientistCard targetCard);
+    public void attackCard(ScientistCard targetCard) {
+        targetCard.isAttackedByCard(this);
+        health -= targetCard.getAttack();
+        if (health <= 0) {
+            destroyEffect();
+        }
+        if (targetCard.getHealth() <= 0) {
+            targetCard.destroyEffect();
+        }
+    }
     public abstract void isAttackedByCard(ScientistCard attackingCard);
     public void checkTick() {
         

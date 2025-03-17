@@ -13,28 +13,34 @@ import java.util.LinkedList;
 import static util.CastingUtil.createCastingCost;
 import static util.DecadeUtil.outsideTimeframe;
 
-// Oersted - F&F Scientist | 3 Electron
+// Faraday - F&F Scientist | 3 Electron
 // Timeframe {1777, 1851}
-// ATK: 1, HP: 3
-// When [Oersted] enters the battlefield, draw 1 card.
+// ATK: 3, HP: 5
+// When [Faraday] enters the battlefield, all scientists you control gain 1 attack.
 
-public class Oersted extends ScientistCard {
+public class Faraday extends ScientistCard {
 
-    public Oersted() {
+    public Faraday() {
         super(
                 createCastingCost(ParticleTypes.ELECTRON,3),
-                "Oersted",
+                "Faraday",
                 new int[]{1777, 1851},
                 CardTypes.FNF_SCIENTIST,
-                1,
-                3);
+                3,
+                5);
     }
     @Override
     public void isAttackedByCard(ScientistCard attackingCard) {}
 
     @Override
     public void etbEffect() {
-        owner.drawCard();
+        owner.getField().forEach(
+                (card ->  {
+                    if (card instanceof ScientistCard scientistField) {
+                        scientistField.setAttack(scientistField.getAttack()+1);
+                    }
+                })
+        );
     }
 
     @Override

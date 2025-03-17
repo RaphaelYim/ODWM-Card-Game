@@ -15,6 +15,7 @@ public class Player {
     private LinkedList<AbstractCard> hand;
     private LinkedList<AbstractCard> field;
     private HashMap<ParticleTypes,Integer> heldParticles;
+    private Player opponent;
 
     public Player(int hp, LinkedList<AbstractCard> deckList) {
         this.hp = hp;
@@ -70,4 +71,7 @@ public class Player {
         Collections.shuffle(deckList);
     }
 
+    public Player getOpponent() {
+        return opponent;
+    }
 }

@@ -67,6 +67,4 @@ public class CastingUtil {
                 player.getHeldParticles().getOrDefault(ParticleTypes.PHOTON,0) >= card.getCastingCost().getOrDefault(ParticleTypes.PHOTON,0) &&
                 player.getHeldParticles().getOrDefault(ParticleTypes.QUARK,0) >= card.getCastingCost().getOrDefault(ParticleTypes.QUARK,0);
     }
-
-
 }

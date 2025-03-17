@@ -22,12 +22,11 @@ public class ParallelPlates extends AbstractCard {
     }
 
     @Override
-    public void etbEffect() {
-
-    }
+    public void etbEffect() {}
 
     @Override
-    public void destroyEffect() {
+    public void destroyEffect() {}
 
-    }
+    @Override
+    public void triggerEffect() {}
 }

@@ -41,6 +41,7 @@ public abstract class AbstractCard {
     }
     public abstract void etbEffect();
     public abstract void destroyEffect();
+    public abstract void triggerEffect();
 
     public HashMap<ParticleTypes, Integer> getCastingCost() {
         return castingCost;
