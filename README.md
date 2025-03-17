@@ -29,7 +29,8 @@ Cards will have some degree of synergy or interference with the relevant cards.
 
 ---
 
-### Acknowledgements
+### Acknowledgements 
+
 As of now, ODWM is no where close to completion, as I am doing the entire project in 1 go.
 All the needed Abstract classes should now be defined. 
 All thats left is creating new cards, implementing their effects, and reworking existing cards to fit what I have planned exactly.
