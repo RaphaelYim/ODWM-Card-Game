@@ -1,5 +1,6 @@
 package components;
 
+import enums.CardTypes;
 import enums.ParticleTypes;
 
 import java.util.HashMap;
@@ -8,8 +9,8 @@ public abstract class ScientistCard extends AbstractCard {
     protected int health;
     protected int attack;
 
-    public ScientistCard(HashMap<ParticleTypes, Integer> castingCost, String name, int decade, int health, int attack) {
-        super(castingCost, name, decade);
+    public ScientistCard(HashMap<ParticleTypes, Integer> castingCost, String name, int[] decade, CardTypes cardType, int health, int attack) {
+        super(castingCost, name, decade, cardType);
         this.health = health;
         this.attack = attack;
     }
@@ -28,5 +29,11 @@ public abstract class ScientistCard extends AbstractCard {
 
     public void setAttack(int attack) {
         this.attack = attack;
+    }
+
+    public abstract void attackCard(ScientistCard targetCard);
+    public abstract void isAttackedByCard(ScientistCard attackingCard);
+    public void checkTick() {
+        
     }
 }

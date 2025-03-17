@@ -62,7 +62,7 @@ public class CastingUtil {
      * @param card The card that is being casting.
      * @return True or False, depending on if the player can cast the card.
      */
-    public boolean canCastCard(Player player, AbstractCard card) {
+    public static boolean canCastCard(Player player, AbstractCard card) {
         return player.getHeldParticles().getOrDefault(ParticleTypes.ELECTRON,0) >= card.getCastingCost().getOrDefault(ParticleTypes.ELECTRON,0) &&
                 player.getHeldParticles().getOrDefault(ParticleTypes.PHOTON,0) >= card.getCastingCost().getOrDefault(ParticleTypes.PHOTON,0) &&
                 player.getHeldParticles().getOrDefault(ParticleTypes.QUARK,0) >= card.getCastingCost().getOrDefault(ParticleTypes.QUARK,0);

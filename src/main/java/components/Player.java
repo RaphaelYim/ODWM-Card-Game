@@ -2,6 +2,7 @@ package components;
 
 import enums.ParticleTypes;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import static util.CastingUtil.createCastingCost;
@@ -28,7 +29,7 @@ public class Player {
         return heldParticles;
     }
 
-    public void subtractParticle(ParticleTypes particleType, int amount) {
+    public void removeParticle(ParticleTypes particleType, int amount) {
         heldParticles.replace(particleType,heldParticles.get(particleType)-amount);
     }
 
@@ -36,5 +37,37 @@ public class Player {
         heldParticles.replace(particleType,heldParticles.get(particleType)+amount);
     }
 
+    public void removeFromHand(AbstractCard card) {
+        hand.remove(card);
+    }
+
+    public void addToHand(AbstractCard card) {
+        hand.add(card);
+    }
+
+    public LinkedList<AbstractCard> getHand() {
+        return hand;
+    }
+
+    public void drawCard() {
+        AbstractCard topCard = deckList.removeFirst();
+        hand.add(topCard);
+    }
+
+    public void addToField(AbstractCard card) {
+        field.add(card);
+    }
+
+    public void removeFromField(AbstractCard card) {
+        field.remove(card);
+    }
+
+    public LinkedList<AbstractCard> getField() {
+        return field;
+    }
+
+    public void shuffleDeck() {
+        Collections.shuffle(deckList);
+    }
 
 }

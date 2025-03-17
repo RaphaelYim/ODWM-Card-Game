@@ -1,7 +1,9 @@
 package enums;
 
 public enum CardTypes {
-    SCIENTIST,
+    FNF_SCIENTIST,
+    EMR_SCIENTIST,
+    ATOMIC_SCIENTIST,
     LAB,
     APPARATUS,
     MODEL,

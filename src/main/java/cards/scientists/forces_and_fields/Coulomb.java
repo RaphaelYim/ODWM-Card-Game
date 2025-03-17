@@ -1,24 +1,57 @@
 package cards.scientists.forces_and_fields;
 
-import components.AbstractCard;
 import components.Player;
+import components.ScientistCard;
+import enums.CardTypes;
 import enums.ParticleTypes;
 
-import java.util.HashMap;
+import static util.CastingUtil.*;
+import static util.DecadeUtil.*;
 
-public class Coulomb extends AbstractCard {
+// Coulomb - F&F Scientist | 3 Electrons
+// Timeframe {1736, 1806}
+// ATK: 3, HP: 7
+// If Coulomb attacks a Scientist who has a timeframe outside his, ATK is doubled.
 
-    public Coulomb(HashMap<ParticleTypes, Integer> castingCost, String name, int decade) {
+public class Coulomb extends ScientistCard {
+
+
+    public Coulomb() {
         super(
-                castingCost,
-                name,
-                decade);
+                createCastingCost(ParticleTypes.ELECTRON,3),
+                "Coulomb",
+                new int[]{1736, 1806},
+                CardTypes.FNF_SCIENTIST,
+                3,
+                2);
     }
 
     @Override
-    public void castCard(Player castingPlayer) {
+    public void attackCard(ScientistCard targetCard) {
+        targetCard.isAttackedByCard(this);
+        if(outsideTimeframe(this.timeframe,targetCard.getTimeframe())) {
+            targetCard.setHealth(targetCard.getHealth()-attack*2);
+        } else {
+            targetCard.setHealth(targetCard.getHealth()-attack);
+        }
+        health -= targetCard.getAttack();
+        if (health <= 0) {
+            destroyEffect();
+        }
+    }
+
+    @Override
+    public void isAttackedByCard(ScientistCard attackingCard) {
 
     }
 
+    @Override
+    public void etbEffect() {
 
+    }
+
+    @Override
+    public void destroyEffect() {
+
+    }
 }
