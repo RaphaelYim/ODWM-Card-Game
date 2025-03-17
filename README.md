@@ -14,27 +14,28 @@ This ODWM project was intended to hit as many CS modules as possible, and as suc
 
 ### Plans
 
-**Timeline Element:** \
+>**Timeline Element:** \
 Cards will have an additional effect / changed effect depending on the target's place on the timeline.
 
-**Contribution:** \
+>**Contribution:** \
 Will be shown through `Discovery` and `Apparatus` cards. \
 Cards may also have numerical references to the scientist's contribution.
 Cards will intertwine with the appropriate scientist.
 
-**Important Experiments:** See Contribution.
+>**Important Experiments:** See Contribution.
 
-**Who's Work They Built On / Downfall** \
+>**Who's Work They Built On / Downfall** \
 Cards will have some degree of synergy or interference with the relevant cards.
 
 ---
 
 ### Acknowledgements 
 
-As of now, ODWM is no where close to completion, as I am doing the entire project in 1 go.
+>As of now, ODWM is no where close to completion, as I am doing the entire project in 1 go.
 All the needed Abstract classes should now be defined. 
 All thats left is creating new cards, implementing their effects, and reworking existing cards to fit what I have planned exactly.
 Theres also the need to implement the actual game stages / states. `Upkeep -> Draw -> Main -> Combat -> End`
+
 ---
 
 ### Reminders For Myself:
